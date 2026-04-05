@@ -1,9 +1,24 @@
+# Entorno y secretos
 .env
+
+# Python
 __pycache__/
 *.pyc
+*.pyo
 venv/
+
+# Bases de datos y vectores (runtime, no versionar)
+data/
 chroma_db/
+
+# Frontend build output
+frontend/dist/
+frontend/.vite/
+
+# Node
 node_modules/
 .next/
+
+# Logs y sistema
 *.log
 .DS_Store

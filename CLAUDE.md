@@ -18,11 +18,21 @@ Asistente de coaching para pilotos basado en el libro de Jaime Ferrer Vives.
 - [x] Estructura de carpetas creada
 - [x] Dependencias Python instaladas
 - [x] Repositorio GitHub conectado
-- [ ] Libro procesado en knowledge_base/
-- [ ] RAG indexado
-- [ ] Backend FastAPI
-- [ ] Frontend React
+- [x] Libro procesado en knowledge_base/ (2 archivos .txt, 342,949 palabras, 205+137 imágenes descritas)
+- [x] RAG indexado en ChromaDB (789 chunks, colección "pilot-coach-v3", data/chroma/)
+- [x] Backend FastAPI (backend/main.py, agent.py, database.py, auth.py, prompts.py)
+- [x] Frontend React + Vite (frontend/src/)
 - [ ] Deploy Railway + Vercel
+
+## Backend — arrancar
+```bash
+python -m uvicorn backend.main:app --port 8000 --reload
+```
+Docs: http://localhost:8000/docs
+
+## Usuarios demo (se crean solos al arrancar)
+- piloto@demo.com / piloto123 (rol: piloto)
+- instructor@demo.com / instructor123 (rol: instructor)
 
 ## Variables de entorno (.env)
 ANTHROPIC_API_KEY=tu_clave
