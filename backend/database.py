@@ -18,6 +18,10 @@ load_dotenv(Path(__file__).parent.parent / ".env", override=True)
 
 DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./data/pilot_coach.db")
 
+# Railway inyecta postgres:// pero SQLAlchemy 2.x solo acepta postgresql://
+if DATABASE_URL.startswith("postgres://"):
+    DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
+
 # Asegurar que el directorio existe para SQLite
 if DATABASE_URL.startswith("sqlite:///"):
     db_path = Path(DATABASE_URL.replace("sqlite:///", ""))
