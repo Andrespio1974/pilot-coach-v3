@@ -1,0 +1,131 @@
+{
+  "id": "03-res-passenger-mobility",
+  "title": "Passenger with reduced mobility and upgrade request during climb",
+  "competency": {
+    "code": "RES",
+    "name": "Resilience",
+    "definition": "The capacity to overcome adversity and emerge fortified from it, through the development of productive capacity."
+  },
+  "primary_ob": {
+    "code": "R.4",
+    "name": "Is flexible"
+  },
+  "context": "The aircraft is climbing toward cruise level. The seat-belt sign is off, and the cabin crew is preparing to begin in-flight service. The senior cabin crew member contacts the flight deck to inform the Captain that the cabin is ready for commercial duties. A situation arises involving a business-class passenger with both arms in casts requiring continuous assistance, her husband seated in economy and unable to assist her from his assigned seat, and a potential upgrade request that may conflict with company policy. The Captain must evaluate operational, human-factor, and service-flow implications before making a decision.",
+  "operational_expectations": [
+    "Maintain service continuity.",
+    "Protect cabin crew workload.",
+    "Ensure passenger dignity and comfort.",
+    "Apply company policy with operational judgment.",
+    "Maintain calm, professional communication.",
+    "Support cabin crew decision-making.",
+    "Prevent service disruption."
+  ],
+  "sequence_of_events": [
+    {"event": "Senior cabin crew informs the Captain that the cabin is ready for service.", "ob": "R.8 – Shows confidence in himself and in others"},
+    {"event": "Senior reports a business-class passenger with both arms in casts requiring continuous assistance.", "ob": "R.6 – Evaluates the specific situation to make the best decision"},
+    {"event": "Senior explains that the passenger's husband is seated in economy and cannot assist her.", "ob": "R.3 – Is continuously adapted to new developments and challenges"},
+    {"event": "Senior requests guidance regarding a possible upgrade.", "ob": "R.7 – Practices reflection in the action, knowledge in action, and reflection on the action"},
+    {"event": "Captain evaluates passenger needs, crew workload, service flow, and company policy.", "ob": "R.2 – Shows endurance in the face of adversity"},
+    {"event": "Captain decides to approve the upgrade for the husband.", "ob": "R.4 – Is flexible"},
+    {"event": "Cabin crew adjusts seating and prepares to begin service.", "ob": "R.1 – Prevents, minimizes, or overcomes the negative effects of a situation"}
+  ],
+  "dialogue": [
+    {"speaker": "Senior Cabin Crew Member", "text": "Captain, we're ready to begin the commercial service.", "narrative": "The interphone chime sounds softly. The Captain glances toward the cockpit door, acknowledging the call with a calm nod.", "ob": "RES R.8 – Shows confidence in himself and in others"},
+    {"speaker": "Captain", "text": "Perfect, Senior. Go ahead when ready. Anything I should be aware of?", "narrative": "His tone is relaxed but attentive, inviting open communication.", "ob": "RES R.8 – Shows confidence in himself and in others"},
+    {"speaker": "Senior Cabin Crew Member", "text": "Yes, Captain. We have a passenger in business class with both arms in casts — looks like a skiing accident. Her insurance covered her seat, but not her husband's, who is in economy. She needs help with everything: eating, restroom, basic tasks. I know the company is usually reluctant to approve upgrades. What are your instructions?", "narrative": "The Senior's voice is steady, but there's a subtle tension — she's anticipating a complex service flow.", "ob": "RES R.6 – Evaluates the specific situation to make the best decision"},
+    {"speaker": "Narrative", "text": "The Captain pauses, eyes drifting briefly toward the cabin door as he considers the implications: crew workload, service flow, dignity of the passenger, and company policy. He inhales slowly, weighing operational impact against human need.", "narrative": "", "ob": "RES R.7 – Practices reflection in the action, knowledge in action, and reflection on the action"},
+    {"speaker": "Captain", "text": "Approve the upgrade. Her husband can assist her throughout the flight. That'll help maintain the service flow and reduce workload for your team.", "narrative": "His tone is decisive but warm — a practical solution delivered with empathy.", "ob": "RES R.4 – Is flexible"},
+    {"speaker": "Senior Cabin Crew Member", "text": "Understood, Captain. I'll take care of it.", "narrative": "She sounds relieved. The decision clearly stabilizes the situation and protects the crew from an avoidable workload spike.", "ob": "RES R.1 – Prevents, minimizes, or overcomes the negative effects of a situation"}
+  ],
+  "technical_notes": [
+    {"fact": "Captain integrates operational considerations with human-factor elements.", "meaning": "Balances workload, service flow, and passenger dignity."},
+    {"fact": "Allowing the husband to assist reduces continuous workload on business-class crew.", "meaning": "Supports service quality."},
+    {"fact": "Decision prevents delays or disruptions in business-class service.", "meaning": "Maintains passenger experience."},
+    {"fact": "A manageable workload supports overall cabin safety.", "meaning": "Prevents fatigue and distraction."},
+    {"fact": "Captain acknowledges reluctance to grant upgrades.", "meaning": "Exercises discretionary authority when operationally justified."},
+    {"fact": "Decision supports compassionate, customer-focused service.", "meaning": "Protects dignity of a passenger with reduced mobility."}
+  ],
+  "crm_analysis": {
+    "positive": [
+      "Senior communicates clearly and proactively.",
+      "Captain listens and evaluates without rushing.",
+      "Decision supports workload management.",
+      "Captain demonstrates empathy and leadership.",
+      "Clear delegation and alignment with company values."
+    ],
+    "challenges": [
+      "Potential conflict with company upgrade policy.",
+      "Risk of setting a precedent.",
+      "Need to ensure decision does not distract from flight deck duties.",
+      "Balancing service expectations with operational constraints."
+    ]
+  },
+  "competency_analysis": [
+    {"ob_code": "R.1", "ob_name": "Prevents, minimizes, or overcomes the negative effects of a situation", "performance_level": "Very often (4)", "level_score": 4, "facts": ["Captain prevents service disruption.", "Captain reduces crew workload.", "Captain avoids operational delays.", "Captain ensures service continuity."]},
+    {"ob_code": "R.2", "ob_name": "Shows endurance in the face of adversity", "performance_level": "Regularly (3)", "level_score": 3, "facts": ["Captain remains focused despite unexpected request.", "Captain manages policy considerations.", "Captain maintains operational priorities."]},
+    {"ob_code": "R.3", "ob_name": "Is continuously adapted to new developments and challenges", "performance_level": "Regularly (3)", "level_score": 3, "facts": ["Captain adapts to unforeseen passenger-care situation.", "Captain adjusts plan during climb.", "Captain integrates new information quickly."]},
+    {"ob_code": "R.4", "ob_name": "Is flexible (Primary OB)", "performance_level": "Almost always (5)", "level_score": 5, "facts": ["Captain overrides standard reluctance toward upgrades.", "Captain adapts policy to operational needs.", "Captain adjusts service plan.", "Captain supports crew workload.", "Captain prioritizes passenger dignity."]},
+    {"ob_code": "R.5", "ob_name": "Is positive", "performance_level": "Regularly (3)", "level_score": 3, "facts": ["Captain approaches issue constructively.", "Captain maintains empathetic tone.", "Captain reassures senior cabin crew."]},
+    {"ob_code": "R.6", "ob_name": "Evaluates the specific situation to make the best decision", "performance_level": "Very often (4)", "level_score": 4, "facts": ["Captain evaluates passenger needs.", "Captain considers crew workload.", "Captain assesses service flow.", "Captain integrates company policy."]},
+    {"ob_code": "R.7", "ob_name": "Practices reflection in the action, knowledge in action, and reflection on the action", "performance_level": "Regularly (3)", "level_score": 3, "facts": ["Captain draws on past experience.", "Captain reflects on operational expectations.", "Captain applies judgment in real time."]},
+    {"ob_code": "R.8", "ob_name": "Shows confidence in himself and in others", "performance_level": "Regularly (3)", "level_score": 3, "facts": ["Captain trusts senior cabin crew assessment.", "Captain communicates confidently.", "Captain delegates effectively."]},
+    {"ob_code": "R.9", "ob_name": "Manages his own stress", "performance_level": "Regularly (3)", "level_score": 3, "facts": ["Captain remains calm.", "Captain avoids escalation.", "Captain maintains professional tone."]},
+    {"ob_code": "R.10", "ob_name": "Diminishes stressing others", "performance_level": "Very often (4)", "level_score": 4, "facts": ["Captain reduces cabin crew workload.", "Captain reassures senior.", "Captain provides clear direction.", "Captain prevents service disruption."]}
+  ],
+  "tdodar": {
+    "time": "Adequate — early in the flight, but decision needed before service begins.",
+    "diagnosis": [
+      "Passenger with severe mobility limitations.",
+      "Husband seated in economy.",
+      "Continuous assistance required.",
+      "Potential service disruption."
+    ],
+    "options": [
+      "Keep husband in economy (high workload).",
+      "Assign crew member full-time (impractical).",
+      "Approve upgrade (chosen).",
+      "Relocate other passengers (unnecessary)."
+    ],
+    "decision": "The Captain decides to approve the upgrade so the husband can assist his wife, demonstrating R.4 flexibility by adapting standard company reluctance to operational reality, ensuring service continuity, reducing crew workload, and supporting passenger dignity.",
+    "actions": [
+      "Inform senior cabin crew.",
+      "Adjust seating.",
+      "Begin service."
+    ],
+    "review": [
+      "Monitor cabin workload.",
+      "Monitor passenger comfort.",
+      "Ensure service flow remains stable."
+    ]
+  },
+  "tem": {
+    "hazards": ["Passenger with limited mobility.", "High assistance requirements."],
+    "errors": ["Denying upgrade could overload crew.", "Misjudging workload impact."],
+    "mistakes": ["Overlooking passenger dignity.", "Underestimating service disruption."],
+    "threats": ["Increased workload for business-class crew.", "Potential service disruption.", "Passenger dissatisfaction.", "Company reluctance to grant upgrades."],
+    "undesired_aircraft_state": ["Delayed service.", "Reduced service quality.", "Passengers becoming anxious due to insufficient attention."],
+    "aircraft_impact": ["No direct aircraft impact."],
+    "operational_impact": ["Increased crew workload.", "Service flow disruption.", "Reduced cabin efficiency."],
+    "mitigations": ["Captain's discretionary decision.", "Clear communication.", "Husband assisting wife.", "Maintaining service flow and workload balance."]
+  },
+  "key_points": [
+    "Flexibility is essential when balancing policy, workload, and passenger dignity.",
+    "Allowing the husband to assist reduces crew workload and maintains service quality.",
+    "Compassionate decisions support operational efficiency.",
+    "Clear communication between cabin and flight deck ensures smooth service flow.",
+    "Resilience and CRM prevent minor issues from escalating."
+  ],
+  "instructional_value": {
+    "value": [
+      "Demonstrates balanced, empathetic decision-making.",
+      "Shows integration of operational and human-factor considerations.",
+      "Reinforces leadership and flexibility.",
+      "Highlights importance of workload management."
+    ],
+    "improvements": [
+      "Encourage structured evaluation of service-related requests.",
+      "Reinforce communication loops between cabin and flight deck.",
+      "Promote documentation of discretionary decisions for consistency."
+    ]
+  }
+}

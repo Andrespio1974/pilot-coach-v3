@@ -1,0 +1,129 @@
+{
+  "id": "01-kno-short-runway",
+  "title": "Regulatory compliance for short-runway operations",
+  "competency": {
+    "code": "KNO",
+    "name": "Application of Knowledge",
+    "definition": "Demonstrates knowledge and understanding of relevant information, operating instructions, aircraft systems and the operating environment."
+  },
+  "primary_ob": {
+    "code": "KNO 0.4",
+    "name": "Knowledge of applicable legislation"
+  },
+  "context": "During cruise, the crew uses a low-workload moment to review the regulatory framework governing short-runway operations. This is relevant for today's destination, which requires strict compliance with landing-distance calculations, declared safety-area requirements, meteorological minima, pilot qualification and familiarization, and any additional conditions imposed by the competent authority. This review reinforces situational awareness and ensures that both pilots are aligned with regulatory and company requirements before arrival.",
+  "operational_expectations": [
+    "Apply regulatory criteria correctly.",
+    "Understand approval requirements for declared safety areas.",
+    "Recall meteorological minima applicable to short-runway operations.",
+    "Verify qualification and familiarization requirements.",
+    "Maintain regulatory compliance throughout the operation."
+  ],
+  "sequence_of_events": [
+    {"event": "The Captain initiates a review of short-runway regulatory requirements.", "ob": "KNO 0.4 – Knowledge of applicable legislation"},
+    {"event": "The FO explains the use of LDA plus declared safety area.", "ob": "KNO 0.2 – Knowledge of published operating instructions"},
+    {"event": "The Captain asks the FO to recall approval requirements.", "ob": "KNO 0.6 – Positive interest in acquiring knowledge"},
+    {"event": "The FO identifies the State of the aerodrome as the approving authority.", "ob": "KNO 0.4 – Knowledge of applicable legislation"},
+    {"event": "The FO recalls safety-area characteristics and corrects himself on maximum length.", "ob": "KNO 0.1 – Practical and applicable knowledge of limitations and systems"},
+    {"event": "The Captain asks about meteorological minima.", "ob": "KNO 0.6 – Positive interest in acquiring knowledge"},
+    {"event": "The FO recalls that minima must not be lower than the higher of VFR or NPA minima.", "ob": "KNO 0.2 – Knowledge of published operating instructions"}
+  ],
+  "dialogue": [
+    {"speaker": "Captain", "text": "First Officer, do you remember what aeronautical legislation says about calculating landing weight based on runway length for short-runway operations?", "narrative": "The Captain scrolls through the regulatory section on the EFB, highlighting the relevant paragraph with a fingertip.", "ob": "KNO 0.4 – Knowledge of applicable legislation"},
+    {"speaker": "First Officer", "text": "Yes, Captain. The runway length used must be the LDA plus an additional distance called the safety area, which must meet specific requirements.", "narrative": "He answers confidently, recalling the structure of the regulation from memory.", "ob": "KNO 0.2 – Knowledge of published operating instructions"},
+    {"speaker": "Captain", "text": "Very good, First Officer. Do you remember those requirements?", "narrative": "The Captain leans back slightly, giving the FO space to think.", "ob": "KNO 0.6 – Positive interest in acquiring knowledge"},
+    {"speaker": "First Officer", "text": "One of the most important is that the safety area must be approved.", "narrative": "He hesitates briefly, mentally reviewing the approval chain.", "ob": "KNO 0.4 – Knowledge of applicable legislation"},
+    {"speaker": "Captain", "text": "Approved by whom? By the State where the airport is located, by the aircraft's State of registry, or by the operator?", "narrative": "The Captain raises an eyebrow, prompting deeper recall.", "ob": "KNO 0.6 – Positive interest in acquiring knowledge"},
+    {"speaker": "First Officer", "text": "By the State where the airport is located, without a doubt.", "narrative": "He answers decisively, now fully confident.", "ob": "KNO 0.4 – Knowledge of applicable legislation"},
+    {"speaker": "Captain", "text": "Correct.", "narrative": "The Captain nods once, acknowledging the FO's accuracy.", "ob": "KNO 0.7 – Applies knowledge effectively"},
+    {"speaker": "First Officer", "text": "Also, the zone must be clear, obstacle-free, unused by vehicles or people during operations, and must not exceed 100 meters… sorry, 90 meters.", "narrative": "He corrects himself mid-sentence, catching the regulatory detail.", "ob": "KNO 0.1 – Practical and applicable knowledge of limitations and systems"},
+    {"speaker": "Captain", "text": "Very good. Any other considerations regarding minimum meteorological values?", "narrative": "He glances at the METAR on the EFB, linking the discussion to today's conditions.", "ob": "KNO 0.6 – Positive interest in acquiring knowledge"},
+    {"speaker": "First Officer", "text": "Yes, Captain. They must not be lower than the higher of VFR or NPA minima.", "narrative": "He delivers the answer with clarity, reinforcing his understanding.", "ob": "KNO 0.2 – Knowledge of published operating instructions"}
+  ],
+  "technical_notes": [
+    {"fact": "Landing-distance calculations must use LDA + declared safety area.", "meaning": "Ensures compliance with regulatory landing-distance criteria."},
+    {"fact": "Safety area must be approved by the State where the aerodrome is located.", "meaning": "Guarantees legal validity of declared distances."},
+    {"fact": "Safety area must be obstacle-free and not exceed 90 m.", "meaning": "Prevents structural damage and ensures safe overrun margins."},
+    {"fact": "Meteorological minima must not be lower than the higher of VFR or NPA minima.", "meaning": "Ensures safe approach conditions."},
+    {"fact": "Pilot qualification and familiarization requirements apply.", "meaning": "Ensures crew readiness for special-airport operations."},
+    {"fact": "Captain uses cruise time to reinforce regulatory knowledge.", "meaning": "Strengthens shared situational awareness."},
+    {"fact": "FO actively participates and self-corrects.", "meaning": "Improves retention and accuracy."},
+    {"fact": "Reviewing regulations prepares the crew for destination constraints.", "meaning": "Reduces risk of regulatory non-compliance."}
+  ],
+  "crm_analysis": {
+    "positive": [
+      "Captain reinforces regulatory knowledge.",
+      "FO participates actively and self-corrects.",
+      "Shared situational awareness increases.",
+      "Open questioning encourages deeper understanding."
+    ],
+    "challenges": [
+      "FO may rely on memory instead of verifying documentation.",
+      "Risk of overconfidence due to conversational tone.",
+      "Regulatory topics can be cognitively dense."
+    ]
+  },
+  "competency_analysis": [
+    {"ob_code": "KNO 0.1", "ob_name": "Practical and applicable knowledge of limitations and systems", "performance_level": "Very often (4)", "level_score": 4, "facts": ["FO recalls safety-area dimensions.", "FO identifies obstacle-free requirements.", "FO corrects himself on maximum length.", "FO links safety-area characteristics to operational safety."]},
+    {"ob_code": "KNO 0.2", "ob_name": "Knowledge of published operating instructions", "performance_level": "Very often (4)", "level_score": 4, "facts": ["FO cites meteorological minima.", "FO explains LDA + safety area rule.", "Captain reinforces minima requirements.", "Crew integrates minima into planning."]},
+    {"ob_code": "KNO 0.3", "ob_name": "Knowledge of physical and ATC environment", "performance_level": "Rarely (1)", "level_score": 1, "facts": ["No environmental references observed."]},
+    {"ob_code": "KNO 0.4", "ob_name": "Knowledge of applicable legislation", "performance_level": "Almost always (5)", "level_score": 5, "facts": ["FO identifies approving authority.", "Captain questions regulatory approval.", "FO recalls qualification requirements.", "Crew discusses legal minima.", "Crew reviews regulatory framework."]},
+    {"ob_code": "KNO 0.5", "ob_name": "Knows where to source required information", "performance_level": "Rarely (1)", "level_score": 1, "facts": ["No documentation-sourcing behaviors observed."]},
+    {"ob_code": "KNO 0.6", "ob_name": "Positive interest in acquiring knowledge", "performance_level": "Very often (4)", "level_score": 4, "facts": ["Captain uses targeted questioning.", "FO responds with detailed recall.", "Captain encourages deeper understanding.", "FO engages actively."]},
+    {"ob_code": "KNO 0.7", "ob_name": "Applies knowledge effectively", "performance_level": "Very often (4)", "level_score": 4, "facts": ["FO self-corrects.", "Captain validates correct application.", "FO applies regulatory criteria.", "Crew aligns understanding."]}
+  ],
+  "tdodar": {
+    "time": "Adequate during cruise.",
+    "diagnosis": [
+      "Need to ensure correct understanding of regulatory requirements.",
+      "Need to verify safety-area approval and minima.",
+      "Need to reinforce qualification criteria."
+    ],
+    "options": [
+      "Continue without reviewing regulations.",
+      "Review only landing-distance rules.",
+      "Conduct full regulatory review (chosen)."
+    ],
+    "decision": "The Captain decides to conduct a full regulatory review, demonstrating correct application of KNO 0.4 by ensuring that both pilots understand and comply with all legal requirements for short-runway operations.",
+    "actions": [
+      "Captain questions FO.",
+      "FO recalls and self-corrects.",
+      "Crew reviews minima and approval requirements."
+    ],
+    "review": [
+      "Crew aligned.",
+      "Regulatory compliance ensured.",
+      "Destination risks understood."
+    ]
+  },
+  "tem": {
+    "hazards": ["Short runway with strict regulatory requirements.", "Need for precise landing-distance calculations."],
+    "errors": ["Misunderstanding of safety-area approval.", "Incorrect safety-area dimensions."],
+    "mistakes": ["Incorrect initial recall of safety-area length.", "Momentary uncertainty about minima."],
+    "threats": ["Runway excursion due to incorrect landing-distance assumptions.", "Regulatory non-compliance."],
+    "undesired_aircraft_state": ["Landing with insufficient declared distance.", "Attempting approach below required minima."],
+    "aircraft_impact": ["Reduced stopping margin.", "Increased landing-distance risk."],
+    "operational_impact": ["Reduced safety margin.", "Increased workload."],
+    "mitigations": ["Review of regulations during cruise.", "Captain's targeted questioning.", "FO self-correction.", "Reinforcement of minima."]
+  },
+  "key_points": [
+    "Short-runway operations require strict regulatory compliance.",
+    "Safety-area approval and dimensions are critical.",
+    "Meteorological minima must always be respected.",
+    "Cruise is an ideal moment for regulatory reinforcement.",
+    "CRM enhances knowledge retention and reduces risk."
+  ],
+  "instructional_value": {
+    "value": [
+      "Excellent scenario for teaching regulatory compliance.",
+      "Reinforces understanding of safety-area requirements.",
+      "Encourages FO self-correction and active recall.",
+      "Strengthens Captain's instructional role."
+    ],
+    "improvements": [
+      "Introduce incorrect regulatory statements to test FO correction.",
+      "Add variant where FO confuses minima.",
+      "Include scenario where safety area is not approved.",
+      "Encourage pilots to verbalize rationale behind each regulation."
+    ]
+  }
+}

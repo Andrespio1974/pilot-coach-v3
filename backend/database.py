@@ -9,7 +9,7 @@ from pathlib import Path
 
 from sqlalchemy import (
     Column, DateTime, ForeignKey, Integer, String, Text,
-    create_engine, event,
+    create_engine, event, inspect, text,
 )
 from sqlalchemy.orm import DeclarativeBase, Session, relationship, sessionmaker
 from dotenv import load_dotenv
@@ -70,6 +70,8 @@ class ChatSession(Base):
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
     fecha = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
     titulo = Column(String(200), nullable=True)
+    mode = Column(String(20), nullable=False, default="coaching")  # coaching | scenario
+    scenario_id = Column(String(80), nullable=True)  # ID del escenario si mode=scenario
 
     user = relationship("User", back_populates="sessions")
     messages = relationship("Message", back_populates="session", cascade="all, delete-orphan",
@@ -90,6 +92,20 @@ class Message(Base):
 
 def create_tables():
     Base.metadata.create_all(bind=engine)
+    _migrate_sessions_add_mode()
+
+
+def _migrate_sessions_add_mode():
+    """Añade mode/scenario_id a sessions si la tabla ya existe sin esas columnas."""
+    inspector = inspect(engine)
+    if "sessions" not in inspector.get_table_names():
+        return
+    columns = {c["name"] for c in inspector.get_columns("sessions")}
+    with engine.begin() as conn:
+        if "mode" not in columns:
+            conn.execute(text("ALTER TABLE sessions ADD COLUMN mode VARCHAR(20) NOT NULL DEFAULT 'coaching'"))
+        if "scenario_id" not in columns:
+            conn.execute(text("ALTER TABLE sessions ADD COLUMN scenario_id VARCHAR(80)"))
 
 
 def get_db():

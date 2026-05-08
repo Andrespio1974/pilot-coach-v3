@@ -1,5 +1,9 @@
 """
-Agente coach: RAG sobre ChromaDB + Claude API con metodología 4-MAT.
+Agente coach.
+
+Dos modos:
+- COACHING (default): RAG sobre el libro de Jaime Ferrer + estilo socrático 4-MAT.
+- SCENARIO: simulación de toma de decisiones sobre un escenario MASTER-AERO-DOC-V17C.
 """
 
 import os
@@ -9,27 +13,33 @@ import chromadb
 from anthropic import Anthropic
 from dotenv import load_dotenv
 
-from .prompts import SYSTEM_PROMPT, build_rag_context
+from .prompts import (
+    SYSTEM_PROMPT,
+    build_rag_context,
+    build_scenario_system_prompt,
+)
+from .scenarios import get_scenario
 
 load_dotenv(Path(__file__).parent.parent / ".env")
 
 CHROMA_PATH = Path(__file__).parent.parent / "data" / "chroma"
-COLLECTION_NAME = "pilot-coach-v3"
-RAG_N_RESULTS = 5          # chunks a recuperar por consulta
-MAX_HISTORY_TURNS = 10     # turnos de conversación a mantener en contexto
+BOOK_COLLECTION = "pilot-coach-v3"
+RAG_N_RESULTS = 5
+MAX_HISTORY_TURNS = 10
 CLAUDE_MODEL = "claude-sonnet-4-6"
 MAX_TOKENS = 2048
+SCENARIO_MAX_TOKENS = 3072  # mayor — la tarjeta de cierre es larga
 
 
-def _get_collection() -> chromadb.Collection:
+def _get_collection(name: str) -> chromadb.Collection:
     client = chromadb.PersistentClient(path=str(CHROMA_PATH))
-    return client.get_collection(COLLECTION_NAME)
+    return client.get_collection(name)
 
 
 def retrieve_context(query: str) -> list[str]:
-    """Busca en ChromaDB los chunks más relevantes para la consulta."""
+    """Busca chunks relevantes del libro para Modo Coaching."""
     try:
-        collection = _get_collection()
+        collection = _get_collection(BOOK_COLLECTION)
         results = collection.query(
             query_texts=[query],
             n_results=RAG_N_RESULTS,
@@ -40,62 +50,28 @@ def retrieve_context(query: str) -> list[str]:
         return []
 
 
-def build_messages_for_claude(
-    history: list[dict],
-    user_message: str,
-    rag_chunks: list[str],
-) -> list[dict]:
-    """
-    Construye la lista de mensajes para la API de Claude.
-    history: lista de {"rol": "user"|"assistant", "contenido": str}
-    """
+def _build_messages(history: list[dict], user_message: str, extra_user_prefix: str = "") -> list[dict]:
+    """Construye la lista de mensajes para la API de Claude (roles user/assistant)."""
     messages = []
-
-    # Historial previo (últimos N turnos)
     for turn in history[-(MAX_HISTORY_TURNS * 2):]:
-        messages.append({
-            "role": turn["rol"],
-            "content": turn["contenido"],
-        })
+        messages.append({"role": turn["rol"], "content": turn["contenido"]})
 
-    # Mensaje actual del usuario, con contexto RAG inyectado
-    rag_block = build_rag_context(rag_chunks)
     content = user_message
-    if rag_block:
-        content = f"{rag_block}\n\n## Pregunta del piloto\n\n{user_message}"
-
+    if extra_user_prefix:
+        content = f"{extra_user_prefix}\n\n## Pregunta del piloto\n\n{user_message}"
     messages.append({"role": "user", "content": content})
     return messages
 
 
-def chat(
-    user_message: str,
-    history: list[dict],
-    pilot_name: str = "",
-) -> str:
-    """
-    Genera la respuesta del coach.
-
-    Args:
-        user_message: Mensaje del piloto.
-        history: Historial previo [{rol, contenido}, ...].
-        pilot_name: Nombre del piloto para personalizar el prompt.
-
-    Returns:
-        Respuesta del coach como string.
-    """
-    # 1. Recuperar contexto RAG
+def _chat_coaching(user_message: str, history: list[dict], pilot_name: str) -> str:
     rag_chunks = retrieve_context(user_message)
+    rag_block = build_rag_context(rag_chunks)
+    messages = _build_messages(history, user_message, extra_user_prefix=rag_block)
 
-    # 2. Construir mensajes
-    messages = build_messages_for_claude(history, user_message, rag_chunks)
-
-    # 3. Personalizar system prompt con el nombre del piloto
     system = SYSTEM_PROMPT
     if pilot_name:
         system += f"\n\nEl piloto con quien estás hablando se llama **{pilot_name}**."
 
-    # 4. Llamar a Claude
     client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
     response = client.messages.create(
         model=CLAUDE_MODEL,
@@ -103,5 +79,50 @@ def chat(
         system=system,
         messages=messages,
     )
-
     return response.content[0].text
+
+
+def _chat_scenario(user_message: str, history: list[dict], pilot_name: str, scenario_id: str) -> str:
+    scenario = get_scenario(scenario_id)
+    if scenario is None:
+        raise ValueError(f"Escenario no encontrado: {scenario_id}")
+
+    system = build_scenario_system_prompt(scenario)
+    if pilot_name:
+        system += f"\n\nEl piloto con quien estás trabajando se llama **{pilot_name}**."
+
+    messages = _build_messages(history, user_message)
+
+    client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
+    response = client.messages.create(
+        model=CLAUDE_MODEL,
+        max_tokens=SCENARIO_MAX_TOKENS,
+        system=system,
+        messages=messages,
+    )
+    return response.content[0].text
+
+
+def chat(
+    user_message: str,
+    history: list[dict],
+    pilot_name: str = "",
+    mode: str = "coaching",
+    scenario_id: str | None = None,
+) -> str:
+    """
+    Genera la respuesta del coach.
+
+    Args:
+        user_message: Mensaje del piloto.
+        history: Historial previo [{rol, contenido}, ...].
+        pilot_name: Nombre del piloto.
+        mode: "coaching" (RAG sobre libro) o "scenario" (simulación).
+        scenario_id: Requerido si mode == "scenario".
+    """
+    if mode == "scenario":
+        if not scenario_id:
+            raise ValueError("scenario_id requerido en mode=scenario")
+        return _chat_scenario(user_message, history, pilot_name, scenario_id)
+
+    return _chat_coaching(user_message, history, pilot_name)

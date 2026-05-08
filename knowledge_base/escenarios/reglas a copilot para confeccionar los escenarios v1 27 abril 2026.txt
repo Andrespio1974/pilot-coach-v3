@@ -1,0 +1,327 @@
+3 mayo 2026
+MASTER‑AERO‑DOC‑V17C — UNIVERSAL SCENARIO STANDARD
+Universal Master Document for Scenario Construction (V16C Edition)  
+Valid for all pilot competencies: KNO, RES, M&I, COM, SAW, WLM, PSD, FPA, FPM, LTM, PRO, etc.
+Scenario Title and Competency
+Scenario Title  
+Scenario number + descriptive title.
+Competency  
+Full name of the competency.
+Include the official competency definition.
+Primary OB  
+OB code + OB name.
+Only one Primary OB per scenario.
+No definitions.
+Context
+The Context must:
+Describe the initial situation clearly and operationally.
+Include only information needed to understand the starting point.
+Establish temporal, spatial, and operational frame.
+Avoid analysis, CRM, TEM, judgments, or explanations.
+Be rewritten if unclear or poorly written.
+Operational Expectations  
+Bullet points describing what the crew is expected to do at the start.
+Sequence of Events
+Chronological list of events.
+Each event must follow this structure:
+Line 1: Event
+Line 2: OB (code + name only)
+Rules:
+OB definitions must never appear.
+OB must be on a separate line.
+No parentheses.
+No explanatory text.
+No OB inside the event line.
+No analysis.
+Operational Flow & Dialogue
+Full, realistic dialogue.
+Each dialogue block must follow this structure:
+Line 1: Spoken phrase
+Line 2: OB (code + name only)
+Rules:
+OB definitions must never appear.
+OB must be on its own line.
+No parentheses.
+No explanations.
+If speaker is not specified, deduce logically and write:
+Speaker:  
+“Phrase.”
+Cinematic Narrative Enhancement Rule (FINAL, UNIVERSAL)
+Allowed narrative elements (brief, operational):
+Physical sensations
+Sensory perception
+Professional micro‑emotions
+Cockpit micro‑details
+Narrative rhythm
+External operational context
+Non‑verbal interactions
+Prohibited:
+OBs inside narrative
+CRM or TEM analysis
+Definitions
+Instructor commentary
+Literary embellishment
+Humor
+Long emotional descriptions
+Unrealistic system behaviour
+Idiomatic Cockpit English Rule (MANDATORY)
+Dialogue must:
+Use natural, idiomatic cockpit English
+Be concise and operational
+Avoid robotic or textbook phrasing
+Remain professional and clear
+Examples allowed:
+“Let’s run the abnormal.”
+“Looks like a spurious.”
+“Good call.”
+“Let’s keep an eye on that.”
+“I’ll take control.”
+Technical Notes
+Bullet points.
+Each Technical Note must include:
+Main bullet: technical fact
+Sub‑bullet (parentheses): operational meaning
+Rules:
+Sub‑bullet must explain why the fact matters.
+No OBs.
+CRM Analysis
+(Situations in this scenario where the crew takes deliberate action to prevent or detect operational errors or communication breakdowns.)
+Must include:
+Positive CRM
+CRM Challenges
+Rules:
+No OBs.
+No technical content.
+No narrative.
+Competency Analysis
+Mandatory rule:
+Evaluate ALL OBs of the scenario’s competency.
+Each OB must follow this structure:
+OB name
+Performance Level (using the official scale)
+Facts (operational, observable, scenario‑specific)
+Performance Levels (MANDATORY FORMAT)
+Almost always (5)
+Very often (4)
+Regularly (3)
+Occasionally (2)
+Rarely (1)
+N/A
+Facts = Performance Level Rule (FINAL)
+Level 5 → 5 facts
+Level 4 → 4 facts
+Level 3 → 3 facts
+Level 2 → 2 facts
+Level 1 → 1 fact
+Rules:
+Facts must be operational and observable.
+Facts must describe behaviours, not interpretations.
+Facts must be bullet points.
+No OB definitions, CRM, TEM, or analysis.
+No duplicated facts.
+TDODAR
+Time
+Diagnosis
+Options
+Decision (narrative sentence, centered on the Primary OB, identifying who decides)
+Actions
+Review
+Rules:
+No OBs.
+No definitions.
+TEM — Threat & Error Management
+(Hazards, errors, mistakes, threats and mitigations identified in this scenario, as well as those that could reasonably have occurred under similar circumstances with a different crew.)
+Each category must include its definition EXACTLY as follows:
+Hazards
+(Events, conditions or circumstances — external or internal — that deviate or distort the normal operation of the flight and alter the planned sequence.)
+Errors
+(Knowledge‑based errors: incorrect actions or decisions caused by lack of knowledge, misunderstanding, or incorrect mental models.)
+Mistakes
+(Attention‑based errors: distraction, forgetfulness, omission, or temporary loss of attention.)
+Threats
+(Consequences that can cause harm to the aircraft, the crew, the passengers, or the operation, arising logically from the combination of hazards, errors and mistakes.)
+Undesired Aircraft State
+(The state in which the aircraft and the operation find themselves — or will find themselves — as the logical consequence of the Threats.)
+Aircraft impact
+(How the aircraft is physically or technically affected.)
+Operational impact
+(How the operation, workload, sequence or safety margin is affected.)
+Mitigations
+(Actions the crew took — or could reasonably have taken — to prevent reaching the Undesired Aircraft State.)
+Rules:
+Bullet‑based.
+Must include all categories.
+Must reference exact phrases from the scenario.
+OBs only when tied to a phrase.
+No narrative.
+Key Points
+4–5 bullets.
+Rules:
+Ordered from most to least important.
+Operational, concrete, memorable.
+No OBs.
+Instructional Value & Suggested Improvements
+Instructional Value  
+Bullet points.
+Suggested Improvements  
+Bullet points.
+Rules:
+No OBs.
+No definitions.
+Must be operational, concrete, scenario‑specific.
+OB Placement Rules
+OBs appear only in:
+Sequence of Events
+Operational Flow & Dialogue
+OBs never appear in:
+Technical Notes
+CRM
+TDODAR
+TEM
+Key Points
+Instructional Value
+Competency Analysis (except OB name)
+OB Interpretation Rule
+Never repeat OB definitions.
+Only OB code + OB name.
+No parentheses.
+OB always on a separate line.
+Consistency Requirements
+All scenarios must follow:
+Same structure
+Section titles must appear WITHOUT numbering
+Correct OB placement
+Mandatory CRM phrase
+Mandatory TEM phrase
+Full TEM definitions
+Competency Analysis rules
+Updated TDODAR
+Technical Notes with sub‑bullets
+Cinematic Narrative Rule
+Idiomatic Cockpit English Rule
+Facts = Performance Level Rule
+Performance Levels
+Almost always (5)
+Very often (4)
+Regularly (3)
+Occasionally (2)
+Rarely (1)
+N/A
+Competency Definitions and OBs
+Must be copied exactly from the official matrix.
+✔️ KNO
+✔️ PRO
+✔️ COM
+✔️ FPA
+✔️ FPM
+✔️ LTM
+✔️ PSD
+✔️ SAW
+✔️ WLM
+✔️ M&I
+COMPETENCY DEFINITIONS AND OBs (FULL AND EXACT)
+(Copied exactly from your official matrix — no changes)
+RES — Resilience
+The capacity to overcome adversity and emerge fortified from it, through the development of productive capacity.
+R.1 Prevents, minimizes, or overcomes the negative effects of a situation
+R.2 Shows endurance in the face of adversity
+R.3 Is continuously adapted to new developments and challenges
+R.4 Is flexible
+R.5 Is positive
+R.6 Evaluates the specific situation in order to make the best decision
+R.7 Practices reflection in the action, knowledge in action, and reflection on the action
+R.8 Shows confidence in himself and in others
+R.9 Manages his own stress
+R.10 Diminishes stressing others
+KNO — Application of Knowledge
+Demonstrates knowledge and understanding of relevant information, operating instructions, aircraft systems and the operating environment.
+0.1 Practical and applicable knowledge of limitations and systems
+0.2 Knowledge of published operating instructions
+0.3 Knowledge of physical and ATC environment
+0.4 Knowledge of applicable legislation
+0.5 Knows where to source required information
+0.6 Positive interest in acquiring knowledge
+0.7 Applies knowledge effectively
+PRO — Application of Procedures and Compliance with Regulations
+1.1 Identifies where to find procedures and regulations
+1.2 Applies procedures in a timely manner
+1.3 Follows SOPs unless safety dictates deviation
+1.4 Operates aircraft systems correctly
+1.5 Monitors aircraft systems
+1.6 Complies with regulations
+1.7 Applies procedural knowledge
+COM — Communication
+2.1 Determines recipient readiness
+2.2 Selects what, when, how and with whom to communicate
+2.3 Conveys messages clearly
+2.4 Confirms understanding
+2.5 Listens actively
+2.6 Asks relevant questions
+2.7 Uses escalation appropriately
+2.8 Uses and interprets non‑verbal communication
+2.9 Uses standard radiotelephone phraseology
+2.10 Manages datalink messages
+FPA — Flight Path Management (Automation)
+3.1 Uses automation appropriately
+3.2 Detects deviations and acts
+3.3 Manages flight path safely
+3.4 Maintains flight path while multitasking
+3.5 Selects appropriate automation level
+3.6 Monitors automation and transitions
+FPM — Flight Path Management (Manual Control)
+4.1 Controls aircraft manually with accuracy
+4.2 Detects deviations and acts
+4.3 Uses attitude, speed, thrust and cues
+4.4 Manages flight path safely
+4.5 Maintains flight path while multitasking
+4.6 Uses flight management and guidance systems
+4.7 Monitors guidance systems
+LTM — Leadership and Teamwork
+5.1 Encourages participation
+5.2 Provides direction
+5.3 Engages others in planning
+5.4 Considers inputs
+5.5 Gives and receives feedback
+5.6 Resolves conflicts constructively
+5.7 Exercises decisive leadership
+5.8 Accepts responsibility
+5.9 Carries out instructions
+5.10 Applies intervention strategies
+5.11 Manages cultural and language challenges
+PSD — Problem Solving and Decision Making
+6.1 Identifies and manages threats and errors
+6.2 Seeks accurate information
+6.3 Identifies and verifies causes
+6.4 Perseveres while prioritizing safety
+6.5 Identifies and considers options
+6.6 Applies decision‑making techniques
+6.7 Monitors and adapts decisions
+6.8 Adapts when no guidance exists
+6.9 Demonstrates resilience in unexpected events
+SAW — Situation Awareness and Management of Information
+7.1 Monitors aircraft and systems
+7.2 Monitors energy state and flight path
+7.3 Monitors environment
+7.4 Validates information
+7.5 Maintains awareness of people and performance
+7.6 Develops contingency plans
+7.7 Responds to reduced awareness
+WLM — Workload Management
+8.1 Exercises self‑control
+8.2 Plans and prioritizes tasks
+8.3 Manages time efficiently
+8.4 Offers assistance
+8.5 Delegates tasks
+8.6 Seeks and accepts assistance
+8.7 Monitors and cross‑checks actions
+8.8 Verifies task completion
+8.9 Manages and recovers from interruptions
+M&I — Monitoring and Intervention
+M.1 Plays an active role
+M.2 Maintains situation awareness
+M.3 Supports PF with tactical and strategic planning
+M.4 Monitors parameters not obvious to PF
+M.5 Monitors PF activities
+M.6 Provides back‑up and takes control if needed
+M.7 Calls out deviations from SOPs
+M.8 Performs SOP‑defined tasks

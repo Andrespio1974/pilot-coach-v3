@@ -24,6 +24,7 @@ from .auth import (
 )
 from .database import ChatSession, Message, User, create_tables, get_db
 from .agent import chat as agent_chat
+from .scenarios import get_scenario, ingest_scenarios_to_chroma, list_scenarios
 
 load_dotenv(Path(__file__).parent.parent / ".env")
 
@@ -48,6 +49,16 @@ app.add_middleware(
 def startup():
     create_tables()
     _seed_demo_users()
+    _ingest_scenarios_safe()
+
+
+def _ingest_scenarios_safe():
+    """Indexa escenarios al arrancar. Best-effort: no bloquea el servidor si falla."""
+    try:
+        n = ingest_scenarios_to_chroma()
+        print(f"[startup] Escenarios indexados en ChromaDB: {n}")
+    except Exception as e:
+        print(f"[startup] Aviso: ingesta de escenarios fallo: {e}")
 
 
 def _seed_demo_users():
@@ -93,11 +104,15 @@ class LoginResponse(BaseModel):
 class ChatRequest(BaseModel):
     mensaje: str
     session_id: Optional[int] = None  # None = nueva sesión
+    mode: Optional[str] = None  # "coaching" | "scenario", solo al crear sesión
+    scenario_id: Optional[str] = None  # solo si mode=="scenario"
 
 
 class ChatResponse(BaseModel):
     respuesta: str
     session_id: int
+    mode: str
+    scenario_id: Optional[str] = None
 
 
 class SessionOut(BaseModel):
@@ -106,9 +121,20 @@ class SessionOut(BaseModel):
     fecha: datetime
     titulo: Optional[str]
     total_mensajes: int
+    mode: str = "coaching"
+    scenario_id: Optional[str] = None
 
     class Config:
         from_attributes = True
+
+
+class ScenarioOut(BaseModel):
+    id: str
+    title: str
+    competency_code: str
+    competency_name: str
+    primary_ob_code: str
+    primary_ob_name: str
 
 
 class MessageOut(BaseModel):
@@ -189,7 +215,20 @@ def chat(
         if not session:
             raise HTTPException(status_code=404, detail="Sesión no encontrada")
     else:
-        session = ChatSession(user_id=current_user.id)
+        # Validar mode/scenario_id al crear sesión
+        mode = (payload.mode or "coaching").lower()
+        if mode not in ("coaching", "scenario"):
+            raise HTTPException(status_code=400, detail="mode inválido")
+        scenario_id = payload.scenario_id if mode == "scenario" else None
+        if mode == "scenario":
+            if not scenario_id or get_scenario(scenario_id) is None:
+                raise HTTPException(status_code=400, detail="scenario_id inválido o no existe")
+
+        session = ChatSession(
+            user_id=current_user.id,
+            mode=mode,
+            scenario_id=scenario_id,
+        )
         db.add(session)
         db.commit()
         db.refresh(session)
@@ -212,12 +251,14 @@ def chat(
     db.add(user_msg)
     db.commit()
 
-    # Generar respuesta del agente
+    # Generar respuesta del agente (modo coaching o scenario)
     try:
         respuesta = agent_chat(
             user_message=payload.mensaje,
             history=history,
             pilot_name=current_user.nombre,
+            mode=session.mode,
+            scenario_id=session.scenario_id,
         )
     except anthropic_sdk.BadRequestError as e:
         raise HTTPException(status_code=503, detail=f"Error de API: {e.message}")
@@ -234,14 +275,24 @@ def chat(
     )
     db.add(assistant_msg)
 
-    # Actualizar título de sesión con las primeras palabras del primer mensaje
+    # Actualizar título de sesión
     if not session.titulo and len(history) == 0:
-        words = payload.mensaje.split()[:8]
-        session.titulo = " ".join(words) + ("..." if len(payload.mensaje.split()) > 8 else "")
+        if session.mode == "scenario" and session.scenario_id:
+            sc = get_scenario(session.scenario_id)
+            if sc:
+                session.titulo = f"[Escenario] {sc['title'][:60]}"
+        else:
+            words = payload.mensaje.split()[:8]
+            session.titulo = " ".join(words) + ("..." if len(payload.mensaje.split()) > 8 else "")
 
     db.commit()
 
-    return ChatResponse(respuesta=respuesta, session_id=session.id)
+    return ChatResponse(
+        respuesta=respuesta,
+        session_id=session.id,
+        mode=session.mode,
+        scenario_id=session.scenario_id,
+    )
 
 
 # ── Sessions ────────────────────────────────────────────────────────────────
@@ -266,6 +317,8 @@ def get_sessions(
                 fecha=s.fecha,
                 titulo=s.titulo,
                 total_mensajes=len(s.messages),
+                mode=s.mode or "coaching",
+                scenario_id=s.scenario_id,
             )
         )
     return result
@@ -324,6 +377,8 @@ def get_all_sessions(
             fecha=s.fecha,
             titulo=s.titulo,
             total_mensajes=len(s.messages),
+            mode=s.mode or "coaching",
+            scenario_id=s.scenario_id,
         )
         for s in sessions
     ]
@@ -356,6 +411,14 @@ def get_pilot_session_messages(
         )
         for m in messages
     ]
+
+
+# ── Scenarios ───────────────────────────────────────────────────────────────
+
+@app.get("/scenarios", response_model=list[ScenarioOut], tags=["Scenarios"])
+def get_scenarios_list(current_user: User = Depends(get_current_user)):
+    """Lista los escenarios MASTER-AERO-DOC-V17C disponibles."""
+    return [ScenarioOut(**s) for s in list_scenarios()]
 
 
 # ── Health check ─────────────────────────────────────────────────────────────

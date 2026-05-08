@@ -1,0 +1,145 @@
+{
+  "id": "02-res-volcanic-ash",
+  "title": "Encounter with volcanic ash during cruise",
+  "competency": {
+    "code": "RES",
+    "name": "Resilience",
+    "definition": "The capacity to overcome adversity and emerge fortified from it, through the development of productive capacity."
+  },
+  "primary_ob": {
+    "code": "R.9",
+    "name": "Manages his own stress"
+  },
+  "context": "The aircraft is in cruise, still many miles from its destination. It is the first flight of the day, and the crew expects a routine, uneventful sector. Suddenly, ATC reports the eruption of a volcano located directly on the planned route, only a few miles ahead. Volcanic ash is extremely hazardous and often nearly invisible, especially when dispersed by winds across multiple flight levels. The Captain is fully aware of the dangers, including engine flameout, sandblasting of cockpit windows, contamination of bleed-air systems, blockage of pitot/static ports, unreliable instrument indications, and potential loss of thrust and electrical power. This transforms a normal cruise segment into a high-risk, time-critical situation.",
+  "operational_expectations": [
+    "The Captain must manage startle and stress effectively.",
+    "The crew must avoid entering volcanic ash at all costs.",
+    "The FO must support with rapid information gathering.",
+    "ATC coordination must be immediate and assertive.",
+    "The crew must identify and divert to a suitable alternate.",
+    "The Captain must maintain composure and lead decisively."
+  ],
+  "sequence_of_events": [
+    {"event": "ATC reports volcanic eruption and ash spreading across flight levels.", "ob": "R.3 – Is continuously adapted to new developments and challenges"},
+    {"event": "The Captain pauses briefly to process the information.", "ob": "R.9 – Manages his own stress"},
+    {"event": "St. Elmo's fire appears on the windshield, increasing stress.", "ob": "R.9 – Manages his own stress"},
+    {"event": "The Captain recalls procedures from recurrent training and reacts decisively.", "ob": "R.7 – Practices reflection in the action, knowledge in action, and reflection on the action"},
+    {"event": "The Captain requests an immediate 180° turn.", "ob": "R.6 – Evaluates the specific situation in order to make the best decision"},
+    {"event": "The FO begins checking alternates without being instructed.", "ob": "R.3 – Is continuously adapted to new developments and challenges"},
+    {"event": "The Captain instructs the FO to obtain conditions for ENRO.", "ob": "R.4 – Is flexible"},
+    {"event": "The FO reports ENRO is suitable.", "ob": "R.8 – Shows confidence in himself and in others"},
+    {"event": "The Captain requests radar vectors for ENRO.", "ob": "R.1 – Prevents, minimizes, or overcomes the negative effects of a situation"}
+  ],
+  "dialogue": [
+    {"speaker": "ATC", "text": "JFVR9, ATC, good morning. We've just received an alert from the national meteorological center: the volcano on your route has erupted. Ash is spreading rapidly across all flight levels about fifty miles ahead. Advise your intentions.", "narrative": "The Captain freezes for half a second — not in fear, but in intense concentration. His eyes narrow slightly as he processes the implications. The cockpit lighting reflects off his focused expression.", "ob": "RES R.9 – Manages his own stress"},
+    {"speaker": "Narrative", "text": "Suddenly, faint bluish streaks of St. Elmo's fire begin crawling across the windshield. The FO glances at the Captain, waiting for his reaction. The Captain remains composed, breathing slow and steady.", "narrative": "", "ob": "RES R.9 – Manages his own stress"},
+    {"speaker": "JFVR9 (Captain)", "text": "ATC, JFVR9. We require an immediate one-eighty to return to clean air. Conditions behind us were safe, and we assume they still are. I'll update you with further decisions.", "narrative": "His tone is calm but decisive — no hesitation, no panic. The FO is already pulling up charts, anticipating the next steps.", "ob": "RES R.6 – Evaluates the specific situation in order to make the best decision"},
+    {"speaker": "Narrative", "text": "The FO is already consulting charts to identify alternates. He scrolls quickly through the diversion list, cross-checking runway lengths, weather, and services.", "narrative": "", "ob": "RES R.3 – Is continuously adapted to new developments and challenges"},
+    {"speaker": "Captain", "text": "First Officer, get the conditions for the nearest suitable airport — ENRO.", "narrative": "The Captain's voice remains steady, adapting instantly to the new operational reality.", "ob": "RES R.4 – Is flexible"},
+    {"speaker": "First Officer", "text": "Captain, ENRO has a long runway, fuel, and emergency services per our Ops Manual. Weather is good.", "narrative": "He delivers the information clearly, trusting the Captain's judgment and reinforcing teamwork.", "ob": "RES R.8 – Shows confidence in himself and in others"},
+    {"speaker": "Narrative", "text": "The Captain considers wind drift, ash dispersion, and the risk of residual contamination. He visualizes the escape path, the descent profile, and the safest approach corridor.", "narrative": "", "ob": "RES R.6 – Evaluates the specific situation in order to make the best decision"},
+    {"speaker": "JFVR9 (Captain)", "text": "ATC, JFVR9. Request radar vectors for landing at ENRO.", "narrative": "His tone is firm and controlled — stabilizing the situation and reducing exposure to ash.", "ob": "RES R.1 – Prevents, minimizes, or overcomes the negative effects of a situation"}
+  ],
+  "technical_notes": [
+    {"fact": "The Captain correctly identifies volcanic ash as a severe and immediate hazard.", "meaning": "Ash clouds can cause engine stall or flameout, sandblasting of cockpit windows, pitot/static blockage, bleed-air contamination, and loss of thrust or electrical power."},
+    {"fact": "The 180° turn is consistent with ICAO and manufacturer guidance.", "meaning": "The safest direction is usually the direction from which you came."},
+    {"fact": "St. Elmo's fire increases stress but also serves as a cue of charged particles.", "meaning": "The Captain manages startle by reverting to trained procedures."},
+    {"fact": "No improvisation occurs.", "meaning": "Actions follow established guidance."},
+    {"fact": "The FO immediately searches for alternates without being instructed.", "meaning": "Demonstrates initiative and situational awareness."},
+    {"fact": "The Captain validates FO findings.", "meaning": "Ensures accuracy and shared mental model."},
+    {"fact": "The Captain prioritizes escape from the hazardous area.", "meaning": "Immediate 180° turn."},
+    {"fact": "Identifies a suitable alternate.", "meaning": "ENRO meets operational requirements."},
+    {"fact": "Coordinates with ATC.", "meaning": "Ensures safe separation and rapid handling."},
+    {"fact": "The Captain clearly communicates the need for an immediate turn.", "meaning": "Ensures ATC awareness of urgency."},
+    {"fact": "Requests radar vectors for ENRO.", "meaning": "Facilitates efficient diversion."},
+    {"fact": "Recent recurrent training proves valuable.", "meaning": "Knowledge is applied under stress."},
+    {"fact": "Crew demonstrates readiness to adapt.", "meaning": "Effective response to unexpected high-risk event."}
+  ],
+  "crm_analysis": {
+    "positive": [
+      "Captain manages startle and stress effectively.",
+      "FO shows initiative by checking alternates immediately.",
+      "Shared situational awareness is strong.",
+      "Clear, assertive communication with ATC.",
+      "Captain validates FO input and integrates it into decision-making."
+    ],
+    "challenges": [
+      "High stress due to volcanic ash hazard.",
+      "Time pressure to escape the area.",
+      "Potential for FO overload during rapid decision-making."
+    ]
+  },
+  "competency_analysis": [
+    {"ob_code": "R.1", "ob_name": "Prevents, minimizes, or overcomes the negative effects of a situation", "performance_level": "Very often (4)", "level_score": 4, "facts": ["Captain orders immediate 180° turn.", "Captain requests vectors to ENRO.", "Captain avoids entering ash cloud.", "Captain initiates precautionary landing."]},
+    {"ob_code": "R.2", "ob_name": "Shows endurance in the face of adversity", "performance_level": "Regularly (3)", "level_score": 3, "facts": ["Captain remains focused despite sudden threat.", "Captain maintains composure during St. Elmo's fire.", "Captain continues leading decisively."]},
+    {"ob_code": "R.3", "ob_name": "Is continuously adapted to new developments and challenges", "performance_level": "Very often (4)", "level_score": 4, "facts": ["Captain adapts to volcanic eruption.", "Captain adjusts route instantly.", "Captain integrates FO alternate information.", "Captain considers wind drift."]},
+    {"ob_code": "R.4", "ob_name": "Is flexible", "performance_level": "Very often (4)", "level_score": 4, "facts": ["Captain abandons planned route.", "Captain delegates alternate assessment to FO.", "Captain accepts FO's findings.", "Captain modifies plan based on ash drift."]},
+    {"ob_code": "R.5", "ob_name": "Is positive", "performance_level": "Regularly (3)", "level_score": 3, "facts": ["Captain maintains calm tone.", "Captain communicates clearly with ATC.", "Captain reassures FO through decisive action."]},
+    {"ob_code": "R.6", "ob_name": "Evaluates the specific situation in order to make the best decision", "performance_level": "Almost always (5)", "level_score": 5, "facts": ["Captain evaluates ash hazard.", "Captain considers wind drift.", "Captain identifies ENRO as suitable.", "Captain integrates FO input.", "Captain coordinates with ATC."]},
+    {"ob_code": "R.7", "ob_name": "Practices reflection-in-action, knowledge-in-action, and reflection-on-action", "performance_level": "Very often (4)", "level_score": 4, "facts": ["Captain recalls recurrent training.", "Captain applies procedures immediately.", "Captain recognizes St. Elmo's fire as a cue.", "Captain avoids improvisation."]},
+    {"ob_code": "R.8", "ob_name": "Shows confidence in himself and in others", "performance_level": "Very often (4)", "level_score": 4, "facts": ["Captain trusts FO initiative.", "Captain validates FO findings.", "Captain relies on FO's alternate selection.", "Captain maintains command authority."]},
+    {"ob_code": "R.9", "ob_name": "Manages his own stress (Primary OB)", "performance_level": "Almost always (5)", "level_score": 5, "facts": ["Captain controls startle effect.", "Captain pauses to process information.", "Captain maintains composure during St. Elmo's fire.", "Captain reacts decisively.", "Captain communicates assertively with ATC."]},
+    {"ob_code": "R.10", "ob_name": "Diminishes stressing others", "performance_level": "Regularly (3)", "level_score": 3, "facts": ["Captain gives clear instructions.", "Captain maintains calm tone.", "Captain reduces FO uncertainty."]}
+  ],
+  "tdodar": {
+    "time": "Critical — ash cloud approaching rapidly.",
+    "diagnosis": [
+      "Volcanic eruption on route.",
+      "Ash spreading across multiple flight levels.",
+      "St. Elmo's fire indicating charged particles.",
+      "High risk of engine and system damage."
+    ],
+    "options": [
+      "Continue on route (catastrophic).",
+      "Climb or descend (ash present at all levels).",
+      "Immediate 180° turn (chosen).",
+      "Divert to nearest suitable airport (ENRO)."
+    ],
+    "decision": "The Captain decides to execute an immediate 180-degree turn and divert to ENRO because managing his own stress allows him to process the volcanic ash threat without hesitation, apply recurrent-training knowledge, and prioritize the safest escape path. His ability to regulate stress enables rapid, structured decision-making, prevents entry into the ash cloud, and ensures that the crew can proceed toward a safe landing without improvisation or delay.",
+    "actions": [
+      "Request immediate 180° turn.",
+      "FO checks alternates.",
+      "Captain selects ENRO.",
+      "Request radar vectors.",
+      "Prepare for precautionary landing."
+    ],
+    "review": [
+      "Monitor ash drift.",
+      "Expedite landing.",
+      "Reassess after landing."
+    ]
+  },
+  "tem": {
+    "hazards": ["Volcanic ash.", "Limited time to react.", "St. Elmo's fire."],
+    "errors": ["Delay in initiating 180° turn.", "Failure to follow SOP."],
+    "mistakes": ["Potential fixation on instruments.", "Potential delay in contacting ATC."],
+    "threats": ["Entry into ash cloud.", "Engine or system damage.", "Loss of thrust or electrical power."],
+    "undesired_aircraft_state": ["Possible engine or system degradation.", "Reduced aircraft performance."],
+    "aircraft_impact": ["Potential engine flameout.", "Pitot/static blockage.", "Bleed-air contamination."],
+    "operational_impact": ["Increased workload.", "Need for immediate diversion.", "Reduced safety margins."],
+    "mitigations": ["Immediate 180° turn.", "FO alternate selection.", "ATC coordination.", "Precautionary landing."]
+  },
+  "key_points": [
+    "Managing stress enables decisive action in high-risk situations.",
+    "The 180° turn is the safest response to volcanic ash.",
+    "FO initiative accelerates problem-solving.",
+    "Recurrent training is essential for startle management.",
+    "Rapid diversion prevents catastrophic consequences."
+  ],
+  "instructional_value": {
+    "value": [
+      "Demonstrates how effective stress management enables the Captain to process a sudden, high-risk threat without losing situational awareness or decision-making capacity.",
+      "Shows the practical application of startle-effect management, transforming physiological stress cues (such as St. Elmo's fire) into structured, procedure-based actions.",
+      "Reinforces the operational value of aviate–navigate–communicate during time-critical events, prioritizing the escape maneuver before any secondary tasks.",
+      "Highlights how FO initiative contributes to maintaining continuity of operations and accelerates the diversion process under high workload.",
+      "Illustrates the importance of recurrent training as a foundation for rapid, non-improvised responses to unexpected hazards such as volcanic ash."
+    ],
+    "improvements": [
+      "The FO could verbalize workload saturation or task prioritization to ensure optimal task distribution during the diversion process.",
+      "The Captain could explicitly brief the FO on monitoring ash drift to strengthen shared situational awareness and anticipate secondary threats.",
+      "The crew could conduct a brief cross-check of residual risks before requesting vectors, reinforcing tactical anticipation.",
+      "The FO could confirm aloud the operational criteria that make ENRO suitable, improving transparency and mutual validation.",
+      "The Captain could outline a secondary alternate as part of the diversion plan, enhancing preparedness in case conditions deteriorate rapidly."
+    ]
+  }
+}

@@ -27,8 +27,16 @@ export const api = {
   login: (email, password) =>
     request('POST', '/auth/login', { email, password }),
 
-  chat: (mensaje, session_id) =>
-    request('POST', '/chat', { mensaje, session_id: session_id ?? null }),
+  chat: (mensaje, session_id, mode, scenario_id) =>
+    request('POST', '/chat', {
+      mensaje,
+      session_id: session_id ?? null,
+      mode: mode ?? null,
+      scenario_id: scenario_id ?? null,
+    }),
+
+  getScenarios: () =>
+    request('GET', '/scenarios'),
 
   getSessions: () =>
     request('GET', '/sessions'),
